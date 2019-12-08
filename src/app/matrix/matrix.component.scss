@@ -1,0 +1,47 @@
+.matrix__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.matrix__row {
+  display: flex;
+}
+
+.matrix__item {
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+
+.names {
+  display: flex;
+  margin-left: 38px;
+}
+
+.name {
+  width: 50px;
+}
+
+.name__vertical {
+  width: 50px;
+  height: 13px;
+  transform: rotate(-90deg);
+  margin-top: 37px;
+}
+
+.name__vertical:first-child {
+  margin-top: 0;
+}
+
+.names__verticals {
+  width: 38px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.inline {
+  display: flex;
+}

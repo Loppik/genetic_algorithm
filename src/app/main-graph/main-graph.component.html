@@ -1,0 +1,20 @@
+<div>
+  <button (click)="this.onGenerateClick()">Generate</button>
+  <div *ngIf="this.barChartDataAverage.length" style="display: block">
+    <canvas baseChart
+            [datasets]="barChartDataAverage"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+  <div [className]="'groups'">
+    <div *ngFor="let i of this.groups; let index = index" [className]="'group'">
+      <span>{{i}}</span>
+      <div [className]="'programmersNames'">
+        <div *ngFor="let programmerName of this.bestResult[index]" [className]="'programmerName'">{{programmerName}}</div>
+      </div>
+    </div>
+  </div>
+</div>

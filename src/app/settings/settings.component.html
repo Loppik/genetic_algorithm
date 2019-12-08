@@ -1,0 +1,27 @@
+<article [className]="'settingsBlock'">
+  <section>
+    <label>Group count:</label>
+    <input [value]="this.settingsService.groupCount" (change)="this.settingsService.setGroupCount($event.target.value)" type="number" min="1"/>
+  </section>
+  <section>
+    <label>Programmers count:</label>
+    <input [value]="this.settingsService.programmersCount" (change)="this.settingsService.setProgrammersCount($event.target.value)" type="number" min="3"/>
+  </section>
+  <section>
+    <label>Total project time:</label>
+    <input style="width: 50px" [value]="this.settingsService.totalTime" (change)="this.settingsService.setTotalTime($event.target.value)" type="number"/>
+  </section>
+
+  <div>
+    <p>Way</p>
+    <input type="radio" name="way" value="iteration" (click)="this.settingsService.setType($event.target.value)" [checked]="this.settingsService.type === this.iterationType">
+    <label>Iteration</label>
+    <input type="radio" name="way" value="optimal" (click)="this.settingsService.setType($event.target.value)" [checked]="this.settingsService.type === this.optimalType">
+    <label>Optimal</label>
+    <div>
+      <input *ngIf="this.settingsService.type === this.iterationType" [value]="this.settingsService.iterationCount" (change)="this.settingsService.setIterationCount($event.target.value)"/>
+    </div>
+  </div>
+
+
+</article>

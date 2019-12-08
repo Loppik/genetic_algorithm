@@ -1,0 +1,16 @@
+<div [className]="'matrix__container'">
+  <div [className]="'names'">
+    <input *ngFor="let name of this.matrixService.names; let i = index" value="{{this.matrixService.names[i]}}" (change)="this.matrixService.setName($event.target.value, i)" [className]="'name'"/>
+  </div>
+  <div [className]="'inline'">
+    <div [className]="'names__verticals'">
+      <input *ngFor="let name of this.matrixService.names; let i = index" value="{{this.matrixService.names[i]}}" (change)="this.matrixService.setName($event.target.value, i)" [className]="'name__vertical'"/>
+    </div>
+    <div>
+      <div *ngFor="let row of this.matrixService.matrix; let i = index" [className]="'matrix__row'">
+        <input value="{{this.matrixService.matrix[i][j]}}" type="number" (change)="this.onMatrixItemChange($event, i, j)" *ngFor="let item of row; let j = index" [className]="'matrix__item'" min="-10" max="10"/>
+      </div>
+    </div>
+  </div>
+  <button (click)="this.matrixService.randomize()">Randomize</button>
+</div>

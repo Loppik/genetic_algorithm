@@ -1,0 +1,35 @@
+.group {
+  display: inline-block;
+  width: 100px;
+}
+
+.programmersNames {
+  display: flex;
+  flex-direction: column;
+}
+
+.programmerName {
+  width: 50px;
+}
+
+.groups {
+  display: flex;
+  align-items: flex-start;
+}
+
+.linesBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.oneData {
+  width: 30px;
+  height: 30px;
+  background-color: #00ced2;
+  margin-right: 5px;
+}
